@@ -7,5 +7,3 @@
   <li> Generated image embeddings & used ChromaDB collections to index image embeddings for faster text based image retrieval
 </li>
 </ul>
-# Text-Based-Retrieval
-# Text-Based-Retrieval
