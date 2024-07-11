@@ -48,5 +48,9 @@ collection = chroma_client.get_or_create_collection(collection_name, metadata={"
 create_image_embeddings(model, train_df, device,collection)
 
 # Perform search
+search_string = "kids playing football"
+results = perform_search(search_string,model,device,collection)
 
+search_string = "cute dogs"
+results = perform_search(search_string,model,device,collection)
 

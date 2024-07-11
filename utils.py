@@ -211,3 +211,40 @@ def create_image_embeddings(model, dataframe, device, collection):
                        embeddings=image_embedding.tolist(),
                        metadatas=[{"image_path": image_path}])
         index += 1
+
+# Visualize the images
+def visualize_result_image(image_path, title):
+    image = Image.open(image_path)
+
+    # Define the title
+
+    # Display the image with the title
+    plt.figure(figsize=(6, 4))  # Adjust the figure size as needed
+    plt.imshow(image)
+    plt.title(title, fontsize=10)  # Adjust the font size as needed
+    plt.axis('off')  # Hide axes
+    plt.show()
+
+
+def perform_search(search_query, model, device,
+                   collection):
+    # Put model to evat
+    model.eval()
+    model.to(device)
+
+    _, _, text_embedding = model(
+        text=[search_query])
+
+    results = collection.query(
+        query_embeddings=text_embedding.tolist(),
+        n_results=20,
+    )
+
+    paths = set()
+    for d in results["metadatas"][0]:
+        image_path = d["image_path"]
+        paths.add(image_path)
+
+    for image_path in paths:
+        visualize_result_image(image_path,
+                               search_string)
