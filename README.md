@@ -9,4 +9,5 @@
 </ul>
 
 ![Demo1](https://github.com/KiranRaghavendra1248/Text-Based-Image-Retrieval/assets/66671251/fd6dd8dc-6883-4959-9994-d99a0b8b2a9e)
+![Demo2](https://github.com/KiranRaghavendra1248/Text-Based-Image-Retrieval/blob/dev/Demo2.png?raw=true)
 
